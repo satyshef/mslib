@@ -1,3 +1,3 @@
-module github.com/satyshef/estype
+module github.com/satyshef/mslib/estype
 
 go 1.18
