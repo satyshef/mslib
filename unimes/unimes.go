@@ -1,12 +1,11 @@
 package unimes
 
-import "time"
-
 // Unimes
 type UniversalMessage struct {
-	ID        int64       `json:"id"` //message ID
-	Metadata  Metadata    `json:"metadata"`
-	Time      time.Time   `json:"time"`      //Дата получения
+	ID       int64    `json:"id"` //message ID
+	Metadata Metadata `json:"metadata"`
+	//Time      time.Time   `json:"time"`      //Дата получения
+	Time      int64       `json:"time"`      //Дата получения
 	IsPublic  bool        `json:"is_public"` //Указывает доступность сообщения сторонним пользователям
 	Sender    Destination `json:"sender"`    //Создатель сообщения
 	Location  Destination `json:"location"`  //Место где было получено сообщение
