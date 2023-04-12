@@ -70,6 +70,7 @@ const (
 	TypeDestinationGroup          TypeDestination = "group"
 	TypeDestinationPrivateGroup   TypeDestination = "private_group"
 	TypeDestinationUser           TypeDestination = "user"
+	TypeDestinationUserBot        TypeDestination = "userbot"
 	TypeDestinationBot            TypeDestination = "bot"
 )
 
