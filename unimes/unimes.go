@@ -28,6 +28,7 @@ type Content struct {
 	FotoLink  string      `json:"foto_link"`
 	VideoLink string      `json:"video_link"`
 	Text      string      `json:"text"`
+	Format    string      `json:"format"`
 }
 
 type Destination struct {
@@ -57,9 +58,10 @@ const (
 type TypeContent string
 
 const (
-	TypeContentText  TypeContent = "text"
-	TypeContentPhoto TypeContent = "photo"
-	TypeContentVideo TypeContent = "video"
+	TypeContentText      TypeContent = "text"
+	TypeContentPhoto     TypeContent = "photo"
+	TypeContentVideo     TypeContent = "video"
+	TypeContentVideoNote TypeContent = "videonote"
 )
 
 type TypeDestination string
