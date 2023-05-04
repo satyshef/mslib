@@ -2,7 +2,8 @@ package unimes
 
 // Unimes
 type UniversalMessage struct {
-	ID       int64    `json:"id"` //message ID
+	ID       int64    `json:"id"`      //message ID
+	PackID   int64    `json:"pack_id"` // id группы сообщений(используем для mediaAlbumID)
 	Metadata Metadata `json:"metadata"`
 	//Time      time.Time   `json:"time"`      //Дата получения
 	Time      string      `json:"time"`      //Дата получения
