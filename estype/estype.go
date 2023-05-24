@@ -16,22 +16,47 @@ type PornhubPost struct {
 	Tags       []string `json:"tags"`
 }
 
+// Структура для основного списка чатов
 type ChatTelegram struct {
-	ID          int64    `json:"id"`
-	Address     string   `json:"address"`
-	Name        string   `json:"name"`
-	Rating      int      `json:"rating"`
-	Observable  bool     `json:"observable"`
-	ObserverID  string   `json:"observer_id"`
-	Description string   `json:"description"`
-	MemberCount int32    `json:"member_count"`
-	Lang        string   `json:"lang"`
-	Timestamp   string   `json:"timestamp"`
-	Type        string   `json:"type"`
-	Tags        []string `json:"tags"`
+	ID          string             `json:"id"`
+	TG_ID       int64              `json:"tg_id"`
+	Address     string             `json:"address"`
+	Name        string             `json:"name"`
+	Rating      int                `json:"rating"`
+	Description string             `json:"description"`
+	MemberCount int32              `json:"member_count"`
+	Lang        string             `json:"lang"`
+	Timestamp   string             `json:"timestamp"`
+	Type        string             `json:"type"`
+	Tags        []string           `json:"tags"`
+	Status      ChatTelegramStatus `json:"status"`
 }
 
+type ChatTelegramStatus struct {
+	ACC    string `json:"acc"`
+	Action string `json:"action"`
+	State  string `json:"state"`
+}
+
+// Структура чата для списка чатов аккаунта
+type ChatTelegramAccount struct {
+	ID        int64  `json:"id"`
+	Name      string `json:"name"`
+	Timestamp string `json:"timestamp"`
+	Type      string `json:"type"`
+}
+
+const (
+	ActionConnection = "connect"
+
+	StateWait      = "wait"
+	StateProcessed = "processed"
+	StateError     = "error"
+	StateDone      = "done"
+)
+
 // Chat for Connect
+/*
 type ChatConnector struct {
 	ID       string   `json:"id"`
 	Address  string   `json:"address"`
@@ -41,7 +66,7 @@ type ChatConnector struct {
 	Lang     string   `json:"lang"`
 	Tags     []string `json:"tags"`
 }
-
+*/
 /*
 type ChatTelegramType string
 const (
@@ -51,8 +76,8 @@ const (
 )
 */
 
-func ChatConnectorFromInterfaces(source map[string]interface{}) (*ChatConnector, error) {
-	var chat ChatConnector
+func ChatFromInterfaces(source map[string]interface{}) (*ChatTelegram, error) {
+	var chat ChatTelegram
 	data, err := json.Marshal(source)
 	if err != nil {
 		return nil, fmt.Errorf("%s", err)
