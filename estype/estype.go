@@ -26,7 +26,7 @@ type ChatTelegram struct {
 	Description string             `json:"description"`
 	MemberCount int32              `json:"member_count"`
 	Lang        string             `json:"lang"`
-	Timestamp   string             `json:"timestamp"`
+	Time        string             `json:"time"`
 	Type        string             `json:"type"`
 	Tags        []string           `json:"tags"`
 	Status      ChatTelegramStatus `json:"status"`
@@ -40,10 +40,10 @@ type ChatTelegramStatus struct {
 
 // Структура чата для списка чатов аккаунта
 type ChatTelegramAccount struct {
-	ID        int64  `json:"id"`
-	Name      string `json:"name"`
-	Timestamp string `json:"timestamp"`
-	Type      string `json:"type"`
+	ID   int64  `json:"id"`
+	Name string `json:"name"`
+	Time string `json:"time"`
+	Type string `json:"type"`
 }
 
 const (
