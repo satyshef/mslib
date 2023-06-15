@@ -50,6 +50,7 @@ const (
 	ActionConnection = "connect"
 
 	StateWait      = "wait"
+	StateReady     = "ready"
 	StateProcessed = "processed"
 	StateError     = "error"
 	StateDone      = "done"
