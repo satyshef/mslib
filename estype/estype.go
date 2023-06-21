@@ -48,6 +48,7 @@ type ChatTelegramAccount struct {
 
 const (
 	ActionConnection = "connect"
+	ActionDelete     = "delete"
 
 	StateWait      = "wait"
 	StateReady     = "ready"
