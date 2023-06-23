@@ -39,16 +39,16 @@ type ChatTelegramStatus struct {
 }
 
 // Структура чата для списка чатов аккаунта
-type ChatTelegramAccount struct {
+type SnapshotTelegramChat struct {
 	ID   int64  `json:"id"`
 	Name string `json:"name"`
-	Time string `json:"time"`
 	Type string `json:"type"`
 }
 
 const (
 	ActionConnection = "connect"
-	ActionDelete     = "delete"
+	ActionLeave      = "leave"
+	ActionCollect    = "collect"
 
 	StateWait      = "wait"
 	StateReady     = "ready"
@@ -91,8 +91,8 @@ func ChatFromInterfaces(source map[string]interface{}) (*ChatTelegram, error) {
 	return &chat, nil
 }
 
-func StructToInterfaces(chat interface{}) (map[string]interface{}, error) {
-	data, err := json.Marshal(chat)
+func StructToInterfaces(in interface{}) (map[string]interface{}, error) {
+	data, err := json.Marshal(in)
 	if err != nil {
 		panic(err)
 	}
@@ -102,4 +102,10 @@ func StructToInterfaces(chat interface{}) (map[string]interface{}, error) {
 		return nil, err
 	}
 	return result, nil
+}
+
+func NewChatTelegram() *ChatTelegram {
+	return &ChatTelegram{
+		Status: ChatTelegramStatus{},
+	}
 }
