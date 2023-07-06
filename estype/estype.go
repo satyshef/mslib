@@ -50,6 +50,7 @@ const (
 	ActionLeave      = "leave"
 	ActionCollect    = "collect"
 
+	StatePrepared  = "prepared"
 	StateWait      = "wait"
 	StateReady     = "ready"
 	StateProcessed = "processed"
