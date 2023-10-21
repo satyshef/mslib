@@ -18,18 +18,20 @@ type PornhubPost struct {
 
 // Структура для основного списка чатов
 type ChatTelegram struct {
-	ID          string             `json:"id"`
-	TG_ID       int64              `json:"tg_id"`
-	Address     string             `json:"address"`
-	Name        string             `json:"name"`
-	Rating      int                `json:"rating"`
-	Description string             `json:"description"`
-	MemberCount int32              `json:"member_count"`
-	Lang        string             `json:"lang"`
-	Time        string             `json:"time"`
-	Type        string             `json:"type"`
-	Tags        []string           `json:"tags"`
-	Status      ChatTelegramStatus `json:"status"`
+	ID              string             `json:"id"`
+	TG_ID           int64              `json:"tg_id"`
+	Address         string             `json:"address"`
+	Name            string             `json:"name"`
+	Rating          int                `json:"rating"`
+	Description     string             `json:"description"`
+	MemberCount     int32              `json:"member_count"`
+	DateLastMessage string             `json:"date_last_message"`
+	HasLinkedChat   bool               `json:"has_linked_chat"`
+	Lang            string             `json:"lang"`
+	Time            string             `json:"time"`
+	Type            string             `json:"type"`
+	Tags            []string           `json:"tags"`
+	Status          ChatTelegramStatus `json:"status"`
 }
 
 type ChatTelegramStatus struct {
