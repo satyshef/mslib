@@ -87,6 +87,7 @@ func ChatFromInterfaces(source map[string]interface{}) (*ChatTelegram, error) {
 	if err != nil {
 		return nil, fmt.Errorf("%s", err)
 	}
+
 	err = json.Unmarshal(data, &chat)
 	if err != nil {
 		return nil, fmt.Errorf("%s", err)
