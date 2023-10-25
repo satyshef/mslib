@@ -48,9 +48,9 @@ type SnapshotTelegramChat struct {
 }
 
 const (
-	ActionConnection = "connect"
-	ActionLeave      = "leave"
-	ActionCollect    = "collect"
+	ActionGetChat = "getchat"
+	ActionLeave   = "leave"
+	ActionCollect = "collect"
 
 	StatePrepared  = "prepared"
 	StateWait      = "wait"
